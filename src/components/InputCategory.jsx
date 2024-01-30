@@ -1,33 +1,31 @@
-const categoryStyles = {
-  personal: {
-    container: "border-category-personal",
-    input:
-      "border-category-personal text-category-personal focus:ring-category-personal",
-  },
-  business: {
-    container: "border-category-business",
-    input:
-      "border-category-business text-category-business focus:ring-category-business",
-  },
-};
+function InputCategory({
+  category,
+  containerClass,
+  inputClass,
+  onChange,
+  checked,
+}) {
+  const colors = {
+    container: containerClass,
+    input: inputClass,
+  };
 
-function InputCategory({ category }) {
-  const colors = categoryStyles[category.toLowerCase()];
   return (
-    <div
-      className={`w-1/2 h-32 relative justify-center flex flex-col items-center transition-all shadow-md border-2 rounded-xl hover:bg-slate-900 bg-slate-800 text-center ${colors.container}`}
-    >
-      <input
-        type="radio"
-        name="category"
-        id={category.toLowerCase()}
-        className={`w-6 h-6 border-2 ${colors.input} transition-all ease-out cursor-pointer`}
-      />
+    <div className="w-1/2">
       <label
         htmlFor={category.toLowerCase()}
-        className={`absolute h-full w-full cursor-pointer rounded-xl translate-y-20`}
+        className={`flex flex-col justify-center text-center items-center p-5 w-full h-32 bg-slate-900 rounded-xl border-2 ${colors.container} cursor-pointer hover:bg-gray-900 transition-all shadow-md`}
       >
-        {category}
+        <input
+          type="radio"
+          name="category"
+          id={category.toLowerCase()}
+          value={category}
+          onChange={onChange}
+          defaultChecked={checked}
+          className={`category w-6 h-6 border-2 ${colors.input} transition-all ease-out cursor-pointer`}
+        />
+        <span>{category}</span>
       </label>
     </div>
   );
