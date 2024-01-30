@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import InputTodo from "./components/InputTodo";
 import InputCategory from "./components/InputCategory";
 import Footer from "./components/Footer";
-import TodoItem from "./components/todoItem";
+import TodoItem from "./components/TodoItem";
 import useInput from "./hooks/useInput";
 import useTodos from "./hooks/useTodos";
 
