@@ -16,6 +16,7 @@ function InputTodo({ todo, onChange }) {
         placeholder="e.g. make a video"
         value={todo}
         onChange={onChange}
+        required
         className="bg-slate-900 border-slate-600 border-none shadow-xl rounded-lg py-3 w-full"
       />
     </div>
