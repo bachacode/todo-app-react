@@ -7,7 +7,7 @@ function TodoItem({ todo, toggleChecked, deleteTodo }) {
 
   const handleChecked = (e) => {
     toggleChecked(e.target.checked, todo.id);
-    setChecked(e.target.value);
+    setChecked(e.target.checked);
   };
 
   return (
